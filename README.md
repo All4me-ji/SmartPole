@@ -1,58 +1,120 @@
-<p align="center"><a href="https://laravel.com" target="_blank"><img src="https://raw.githubusercontent.com/laravel/art/master/logo-lockup/5%20SVG/2%20CMYK/1%20Full%20Color/laravel-logolockup-cmyk-red.svg" width="400" alt="Laravel Logo"></a></p>
+# SmartPole
 
-<p align="center">
-<a href="https://github.com/laravel/framework/actions"><img src="https://github.com/laravel/framework/workflows/tests/badge.svg" alt="Build Status"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/dt/laravel/framework" alt="Total Downloads"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/v/laravel/framework" alt="Latest Stable Version"></a>
-<a href="https://packagist.org/packages/laravel/framework"><img src="https://img.shields.io/packagist/l/laravel/framework" alt="License"></a>
-</p>
+## Présentation
 
-## About Laravel
+SmartPole est une application web développée dans le cadre d'un stage chez **BS International**. Elle permet de centraliser les données des différents pôles d'une entreprise afin de faciliter le suivi des performances et d'améliorer la prise de décision.
 
-Laravel is a web application framework with expressive, elegant syntax. We believe development must be an enjoyable and creative experience to be truly fulfilling. Laravel takes the pain out of development by easing common tasks used in many web projects, such as:
+L'application intègre un tableau de bord interactif, un système de gestion des ventes, de la production et des objectifs, ainsi qu'un module de prédiction des ventes basé sur une régression linéaire simple.
 
-- [Simple, fast routing engine](https://laravel.com/docs/routing).
-- [Powerful dependency injection container](https://laravel.com/docs/container).
-- Multiple back-ends for [session](https://laravel.com/docs/session) and [cache](https://laravel.com/docs/cache) storage.
-- Expressive, intuitive [database ORM](https://laravel.com/docs/eloquent).
-- Database agnostic [schema migrations](https://laravel.com/docs/migrations).
-- [Robust background job processing](https://laravel.com/docs/queues).
-- [Real-time event broadcasting](https://laravel.com/docs/broadcasting).
+---
 
-Laravel is accessible, powerful, and provides tools required for large, robust applications.
+## Fonctionnalités principales
 
-## Learning Laravel
+- Authentification des utilisateurs
+- Gestion des utilisateurs (CRUD)
+- Gestion des pôles (CRUD)
+- Gestion des ventes (CRUD)
+- Gestion des objectifs (CRUD)
+- Gestion de la production (CRUD)
+- Tableau de bord avec indicateurs de performance (KPI)
+- Génération de rapports PDF et Excel
+- Module de prédiction des ventes basé sur une régression linéaire
+- Alertes automatiques selon les performances des pôles
 
-Laravel has the most extensive and thorough [documentation](https://laravel.com/docs) and video tutorial library of all modern web application frameworks, making it a breeze to get started with the framework.
+---
 
-In addition, [Laracasts](https://laracasts.com) contains thousands of video tutorials on a range of topics including Laravel, modern PHP, unit testing, and JavaScript. Boost your skills by digging into our comprehensive video library.
+## Module d'intelligence artificielle
 
-You can also watch bite-sized lessons with real-world projects on [Laravel Learn](https://laravel.com/learn), where you will be guided through building a Laravel application from scratch while learning PHP fundamentals.
+Le module de prédiction repose sur une **régression linéaire simple** implémentée directement en PHP au sein de Laravel.
 
-## Agentic Development
+Les données utilisées proviennent de la base PostgreSQL de l'application. Les ventes sont agrégées par mois afin d'estimer la tendance et de prédire les ventes des périodes futures.
 
-Laravel's predictable structure and conventions make it ideal for AI coding agents like Claude Code, Cursor, and GitHub Copilot. Install [Laravel Boost](https://laravel.com/docs/ai) to supercharge your AI workflow:
+Le modèle fournit notamment :
 
-```bash
-composer require laravel/boost --dev
+- la tendance observée ;
+- les ventes prévisionnelles ;
+- le coefficient de détermination (R²) ;
+- la MAE (Mean Absolute Error) ;
+- la RMSE (Root Mean Square Error).
 
-php artisan boost:install
+---
+
+## Technologies utilisées
+
+### Backend
+
+- Laravel 12
+- PHP 8
+- Eloquent ORM
+
+### Frontend
+
+- Blade
+- HTML5
+- CSS3
+- JavaScript
+- Bootstrap
+
+### Base de données
+
+- PostgreSQL
+
+### Bibliothèques
+
+- Chart.js
+- DomPDF
+- Laravel Excel
+
+---
+
+## Architecture
+
+Le projet suit l'architecture **MVC (Model – View – Controller)** proposée par Laravel.
+
+```
+Vue (Blade)
+      │
+Contrôleur
+      │
+Modèle
+      │
+PostgreSQL
+      │
+Module IA
 ```
 
-Boost provides your agent 15+ tools and skills that help agents build Laravel applications while following best practices.
+---
 
-## Contributing
+## Installation
 
-Thank you for considering contributing to the Laravel framework! The contribution guide can be found in the [Laravel documentation](https://laravel.com/docs/contributions).
+```bash
+git clone https://github.com/All4me-ji/SmartPole.git
 
-## Code of Conduct
+cd SmartPole
 
-In order to ensure that the Laravel community is welcoming to all, please review and abide by the [Code of Conduct](https://laravel.com/docs/contributions#code-of-conduct).
+composer install
 
-## Security Vulnerabilities
+npm install
 
-If you discover a security vulnerability within Laravel, please send an e-mail to Taylor Otwell via [taylor@laravel.com](mailto:taylor@laravel.com). All security vulnerabilities will be promptly addressed.
+cp .env.example .env
 
-## License
+php artisan key:generate
 
-The Laravel framework is open-sourced software licensed under the [MIT license](https://opensource.org/licenses/MIT).
+php artisan migrate
+
+php artisan serve
+```
+
+Configurer ensuite la connexion PostgreSQL dans le fichier `.env`.
+
+---
+
+
+
+## Auteur
+
+**Yasmine COMPAORE**
+
+Étudiante en Génie Informatique – HESTIM
+
+Projet réalisé dans le cadre d'un stage chez **BS International**.
