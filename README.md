@@ -1,7 +1,5 @@
 # SmartPole
 
-# SmartPole
-
 ![Laravel](https://img.shields.io/badge/Laravel-12-red)
 ![PHP](https://img.shields.io/badge/PHP-8-blue)
 ![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
