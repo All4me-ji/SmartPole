@@ -1,5 +1,12 @@
 # SmartPole
 
+# SmartPole
+
+![Laravel](https://img.shields.io/badge/Laravel-12-red)
+![PHP](https://img.shields.io/badge/PHP-8-blue)
+![PostgreSQL](https://img.shields.io/badge/PostgreSQL-16-blue)
+![License](https://img.shields.io/badge/Academic-Project-orange)
+
 ## Présentation
 
 SmartPole est une application web développée dans le cadre d'un stage chez **BS International**. Elle permet de centraliser les données des différents pôles d'une entreprise afin de faciliter le suivi des performances et d'améliorer la prise de décision.
@@ -53,7 +60,6 @@ Le modèle fournit notamment :
 - HTML5
 - CSS3
 - JavaScript
-- Bootstrap
 
 ### Base de données
 
@@ -89,24 +95,19 @@ Module IA
 
 ```bash
 git clone https://github.com/All4me-ji/SmartPole.git
-
 cd SmartPole
 
 composer install
-
 npm install
-
-cp .env.example .env
-
-php artisan key:generate
-
-php artisan migrate
-
-php artisan serve
 ```
 
-Configurer ensuite la connexion PostgreSQL dans le fichier `.env`.
+Créez un fichier `.env` à partir de `.env.example`, puis configurez votre connexion PostgreSQL.
 
+```bash
+php artisan key:generate
+php artisan migrate
+php artisan serve
+```
 ---
 
 
